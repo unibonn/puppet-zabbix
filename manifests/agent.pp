@@ -380,7 +380,7 @@ class zabbix::agent (
       firewall { "150 zabbix-agent from ${_server}":
         dport  => $listenport,
         proto  => 'tcp',
-        jump   => 'accept',
+        action => 'accept',
         source => $_server,
         state  => [
           'NEW',
